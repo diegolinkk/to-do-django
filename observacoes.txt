@@ -1,0 +1,6 @@
+1 - models ok
+2 - admin ok
+3 - rotas ok
+4 - templates básicos + visualizar dados - categorias ok - pendente visualizr tarefas
+5 - controlar dados sem admin (CRUD)
+6 - refinar templates
