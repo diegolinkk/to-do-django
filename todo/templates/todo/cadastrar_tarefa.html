@@ -1,0 +1,21 @@
+{% extends 'todo/base.html' %}
+
+{% block conteudo %}
+    <h1>Cadastrar Tarefa</h1>
+    <form action="#" method="post">
+
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="enviar">
+    </form>
+
+
+    <script>
+        $(function () {
+          $("#id_data").datetimepicker({
+            format: 'd/m/Y H:i',
+          });
+        });
+      </script>
+
+{% endblock conteudo %}

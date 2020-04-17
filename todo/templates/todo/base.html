@@ -6,12 +6,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'todo/teste.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <!-- XDSoft DateTimePicker -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" integrity="sha256-DOS9W6NR+NFe1fUhEE0PGKY/fubbUCnOfTje2JMDw3Y=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk=" crossorigin="anonymous"></script>
     <title>Todo List</title>
 </head>
 <body>
     <div class="sidebar">
-        {% block categorias %}
-        {% endblock categorias %}
+        <a href="{% url 'cadastrar_tarefa' %}" id="cadastrar"> Cadastrar Tarefa</a>
+        <a href="{% url 'tarefas_por_categoria' 0 %}"> Todas as Tarefas </a>
+        {% for categoria in categorias %}
+            <a href="{% url 'tarefas_por_categoria' categoria.id %}"> {{categoria.nome}}</a>
+        {% endfor %}
     </div>
 
     <div class="content">

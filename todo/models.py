@@ -11,6 +11,7 @@ class Categoria(models.Model):
 class Tarefa(models.Model):
     nome = models.CharField(max_length=250)
     data = models.DateTimeField() #data para conclusão
+    feito = models.BooleanField(default="False")
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
 
     def __str__(self):

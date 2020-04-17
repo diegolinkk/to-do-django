@@ -33,6 +33,29 @@ div.content {
     height: 1000px;
 }
 
+li {
+    margin: 1em;
+}
+
+li a{
+    text-decoration: none;
+    color:red;
+}
+
+li small{
+    font-size: x-small;
+    
+}
+
+#cadastrar {
+    background-color: #c0392b;
+    color: white;
+}
+
+li.feito{
+    text-decoration: line-through;
+}
+
 @media screen and (max-width: 700px) {
     .sidebar {
         width: 100%;
@@ -50,3 +73,4 @@ div.content {
         float: none;
     }
 }
+

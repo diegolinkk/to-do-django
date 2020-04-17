@@ -1,6 +1,36 @@
-1 - models ok
-2 - admin ok
-3 - rotas ok
-4 - templates básicos + visualizar dados - categorias ok - pendente visualizr tarefas
-5 - controlar dados sem admin (CRUD)
-6 - refinar templates
+- models ok
+- admin ok
+- rotas ok
+- templates básicos + visualizar dados - categorias ok
+- puxar só as não feitas - ok
+- fazer funcionar o botão de feitas - ok
+- listar as não feitas em algum lugar a decidir -ok aparecem juntas só que riscadas
+- fazer ícone de check funcionar (executar a tarefa) - ok
+- fazer o filtro de categorias funcionar - ok
+
+- incluir opção de cadastrar tarefa fora do admin - ok
+- incluir opção de cadastrar categorias fora do admin - próxima
+- pensar como habilitar painel de edição das tarefas
+- refinar templates
+
+queries
+Buscar somente não feitas: Tarefa.objects.filter(feito=False)
+
+Salvar um objeto existente:
+    t = Tarefa.objects.get(id=1)
+    t.feito = True
+    t.save()
+
+Listar todas as tarefas de uma categoria
+    C = Categoria.ojects.get(id=1)
+    C.tarefa_set.all() 
+
+Inserindo uma tarefa direto pelo shell (deu um aviso de erro por faltar o UTC)
+    tarefa = Tarefa(nome='teste heheheh',data=datetime.datetime(2020, 4, 6, 19, 50, 37),categoria=Categoria.objects.get(id=1))
+
+Buscando tarefas ordenadas por feito ao contrário (repare no -)
+    Tarefa.objects.order_by('-feito')
+
+
+Observações pós projeto - Ainda não sei colocar um datepicker no formulário do html que case bem com o django. 
+Acabei precisando usar jquery e um addon jquery pra configurar isso

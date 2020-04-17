@@ -1,16 +1,11 @@
 {% extends 'todo/base.html' %}
-{% block categorias %}
-    {% for categoria in categorias %}
-        <a href="#{{categoria.nome}}"> {{categoria.nome}}</a>
-    {% endfor %}
-{% endblock categorias %}
 
 {% block conteudo %}
     <ul>
-        <li> Tarefa 1</li>
-        <li> Tarefa 2</li>
-        <li> Tarefa 3</li>
-        <li> Tarefa 4</li>
-        <li> Tarefa 5</li>
+        {% for tarefa in tarefas %}
+            <li class="{% if tarefa.feito  %} feito {% endif %}"> <a class="fa fa-check " href="{% url 'concluir_tarefa' tarefa.id %}"></a> {{tarefa.nome}} <br/>
+            <small>{{tarefa.data}} </small>
+            </li>
+        {% endfor %}
     </ul>
 {% endblock conteudo %}
