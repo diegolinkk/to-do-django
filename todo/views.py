@@ -55,3 +55,9 @@ def cadastrar_categoria(request):
     categorias = carregar_categorias()
     form = CategoriaForm()
     return render(request,'todo/cadastrar_categoria.html',{'form':form,'categorias':categorias})
+
+
+def excluir_tarefa(request, tarefa_id):
+    t = Tarefa.objects.get(id=tarefa_id)
+    t.delete()
+    return redirect('tarefas')

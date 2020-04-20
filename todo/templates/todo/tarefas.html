@@ -3,9 +3,13 @@
 {% block conteudo %}
     <ul>
         {% for tarefa in tarefas %}
-            <li class="{% if tarefa.feito  %} feito {% endif %}"> <a class="fa fa-check " href="{% url 'concluir_tarefa' tarefa.id %}"></a> {{tarefa.nome}} <br/>
+            <li class="{% if tarefa.feito  %} feito {% endif %}"> <a class="fa fa-check " href="{% url 'concluir_tarefa' tarefa.id %}"></a> {{tarefa.nome}}
+            <a class="fa fa-trash link-deletar" href="{% url 'excluir_tarefa' tarefa.id %}" ></a>
+            <br/>
             <small>{{tarefa.data}} </small>
             </li>
         {% endfor %}
     </ul>
+
+    <script src="../../static/todo/deletar_tarefas.js"></script>
 {% endblock conteudo %}
