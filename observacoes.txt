@@ -9,7 +9,7 @@
 - fazer o filtro de categorias funcionar - ok
 
 - incluir opção de cadastrar tarefa fora do admin - ok
-- incluir opção de cadastrar categorias fora do admin - próxima
+- incluir opção de cadastrar categorias fora do admin - ok
 - pensar como habilitar painel de edição das tarefas
 - refinar templates
 

@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import Categoria,Tarefa
-from .forms import TarefaForm
+from .forms import TarefaForm, CategoriaForm
 
 #como muitos lugares carregam isso, virou função
 def carregar_categorias():
@@ -43,3 +43,15 @@ def cadastrar_tarefa(request):
     categorias = carregar_categorias()
     form = TarefaForm()
     return render(request,'todo/cadastrar_tarefa.html',{'form':form,'categorias': categorias})
+
+def cadastrar_categoria(request):
+
+    if request.method == 'POST':
+        f = CategoriaForm(request.POST)
+        if f.is_valid():
+            f.save()
+            return redirect('tarefas')
+
+    categorias = carregar_categorias()
+    form = CategoriaForm()
+    return render(request,'todo/cadastrar_categoria.html',{'form':form,'categorias':categorias})

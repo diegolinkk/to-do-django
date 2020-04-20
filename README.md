@@ -29,3 +29,8 @@ pip install -r .\requirements.txt
 python manage.py migrate
 ```
 
+## Execute o servidor web
+```sh
+python manage.py runserver
+```
+
