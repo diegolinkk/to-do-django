@@ -75,3 +75,11 @@ def editar_tarefa(request,tarefa_id):
     #se não for post, carrefa o form a partir da tarefa e manda renderizar
     form = TarefaForm(instance=tarefa)
     return render(request,'todo/editar_tarefa.html',{'form': form,'categoria':carregar_categorias()})
+
+def listar_categorias(request):
+    return render(request,'todo/listar_categorias.html', {'categorias': carregar_categorias()})
+
+def excluir_categoria(request, categoria_id):
+    categoria = Categoria.objects.get(id=categoria_id)
+    categoria.delete()
+    return redirect('listar_categorias')

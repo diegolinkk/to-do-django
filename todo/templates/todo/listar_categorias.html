@@ -1,0 +1,18 @@
+{% extends 'todo/base.html' %}
+{% block conteudo %}
+{% load static %}
+
+    <h1> Editar Categorias</h1>
+    <ul>
+        {% for categoria in categorias %}
+            <li>{{ categoria }}
+                <a href="editar" class="fa fa-edit"></a>
+                <a href="{% url 'excluir_categoria' categoria.id %}" class="fa fa-trash link-deletar"></a>
+
+            </li>
+        {% endfor %}
+    </ul>
+
+    <script src="{% static 'todo/confirmar_deletar.js' %}"></script>
+
+{% endblock conteudo %}

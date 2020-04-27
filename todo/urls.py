@@ -12,4 +12,6 @@ urlpatterns = [
 
     #categorias
     path('categoria/cadastrar/',views.cadastrar_categoria,name='cadastrar_categoria'),
+    path('categoria/listar', views.listar_categorias, name='listar_categorias'),
+    path('categoria/excluir/<int:categoria_id>/',views.excluir_categoria, name='excluir_categoria'),
  ]

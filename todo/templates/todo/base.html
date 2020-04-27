@@ -20,6 +20,7 @@
     <div class="sidebar">
         <a href="{% url 'cadastrar_tarefa' %}" id="cadastrar-tarefa"> Cadastrar Tarefa</a>
         <a href="{% url 'cadastrar_categoria' %}" id="cadastrar-categoria"> Cadastrar Categoria</a>
+        <a href="{% url 'listar_categorias' %}" id="editar-categorias"> Editar Categorias </a>
         <a href="{% url 'tarefas_por_categoria' 0 %}"> Todas as Tarefas </a>
         {% for categoria in categorias %}
             <a href="{% url 'tarefas_por_categoria' categoria.id %}"> {{categoria.nome}}</a>

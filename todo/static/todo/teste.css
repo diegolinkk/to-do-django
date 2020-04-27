@@ -47,7 +47,7 @@ li small{
     
 }
 
-#cadastrar-tarefa,  #cadastrar-categoria {
+#cadastrar-tarefa,  #cadastrar-categoria, #editar-categorias {
     background-color: #c0392b;
     color: white;
 }

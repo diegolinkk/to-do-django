@@ -1,4 +1,5 @@
 {% extends 'todo/base.html' %}
+{% load static %}
 
 {% block conteudo %}
     <ul>
@@ -11,5 +12,5 @@
         {% endfor %}
     </ul>
 
-    <script src="../../static/todo/deletar_tarefas.js"></script>
+    <script src="{% static 'todo/confirmar_deletar.js' %}"></script>
 {% endblock conteudo %}
