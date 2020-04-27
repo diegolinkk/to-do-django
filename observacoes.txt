@@ -12,15 +12,11 @@
 - incluir opção de cadastrar categorias fora do admin - ok
 - deletar tarefas fora do admin (preciso listá-las antes ou colocar opção de excluir na própria lista atual) - ok
 - editar tarefa (abrir um form mesmo) - ok
-
---- backlog
 - editar categoria (abrir um form mesmo)
     cenário - clica nas categorias:
         lista todas as categorias - url categorias/listar - ok
             opção de excluir cada categoria - url categorias/excluir/id - ok
-            opção de editar cada categoria - url categorias/editar/id - FALTA SO ESSA
-
-
+            opção de editar cada categoria - url categorias/editar/id - ok
 
 --------------------------------------------------------
 - após essa versão 1.0, fazer deploy na vm ubuntu
@@ -28,6 +24,7 @@
 - pensar como habilitar painel de edição das tarefas
 - refinar templates
 
+--------------------------------------------------------------
 queries
 Buscar somente não feitas: Tarefa.objects.filter(feito=False)
 
@@ -53,8 +50,6 @@ Deletar tarefa
 
 Observações pós projeto - Ainda não sei colocar um datepicker no formulário do html que case bem com o django. 
 Acabei precisando usar jquery e um addon jquery pra configurar isso
-
-
 
 observações para a próxima:
     atentar à padronização de nomes (para ser bem claro)

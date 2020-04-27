@@ -83,3 +83,15 @@ def excluir_categoria(request, categoria_id):
     categoria = Categoria.objects.get(id=categoria_id)
     categoria.delete()
     return redirect('listar_categorias')
+
+def editar_categoria(request,categoria_id):
+    categoria = Categoria.objects.get(id=categoria_id)
+
+    if request.method == 'POST':
+        form = CategoriaForm(data = request.POST, instance= categoria)
+        if form.is_valid():
+            form.save()
+            return redirect('listar_categorias')
+
+    form = CategoriaForm(instance = categoria)
+    return render(request,'todo/editar_categoria.html', {'form': form, 'categorias': carregar_categorias()})

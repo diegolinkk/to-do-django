@@ -6,7 +6,7 @@
     <ul>
         {% for categoria in categorias %}
             <li>{{ categoria }}
-                <a href="editar" class="fa fa-edit"></a>
+                <a href="{% url 'editar_categoria' categoria.id %}" class="fa fa-edit"></a>
                 <a href="{% url 'excluir_categoria' categoria.id %}" class="fa fa-trash link-deletar"></a>
 
             </li>
