@@ -6,7 +6,7 @@
             <li class="{% if tarefa.feito  %} feito {% endif %}"> <a class="fa fa-check " href="{% url 'concluir_tarefa' tarefa.id %}"></a> {{tarefa.nome}}
             <a class="fa fa-trash link-deletar" href="{% url 'excluir_tarefa' tarefa.id %}" ></a>
             <br/>
-            <small>{{tarefa.data}} </small>
+            <small>{{tarefa.data}}  </small> <a href="{% url 'editar_tarefa' tarefa.id %}"> <span class="fa fa-edit"></span> </a> 
             </li>
         {% endfor %}
     </ul>

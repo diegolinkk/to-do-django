@@ -61,3 +61,17 @@ def excluir_tarefa(request, tarefa_id):
     t = Tarefa.objects.get(id=tarefa_id)
     t.delete()
     return redirect('tarefas')
+
+def editar_tarefa(request,tarefa_id):
+    tarefa = Tarefa.objects.get(id=tarefa_id)
+
+    #rotina de salvar
+    if request.method == 'POST':
+        form = TarefaForm(request.POST, instance=tarefa)
+        if form.is_valid():
+            form.save()
+            return redirect('tarefas')
+
+    #se não for post, carrefa o form a partir da tarefa e manda renderizar
+    form = TarefaForm(instance=tarefa)
+    return render(request,'todo/editar_tarefa.html',{'form': form,'categoria':carregar_categorias()})
